@@ -94,7 +94,58 @@
 /***/ (function(module, exports) {
 
 // require('./bootstrap');
-console.log('hoolla');
+var id = document.getElementById.bind(document);
+var q = document.querySelector.bind(document);
+var all = document.querySelectorAll.bind(document);
+
+var openCloseMenu = function openCloseMenu() {
+  id('menu').classList.toggle('open-menu');
+};
+
+var closeMenu = function closeMenu(e) {
+  if (e.target === id('menu')) {
+    openCloseMenu();
+  }
+};
+
+var showHideArrow = function showHideArrow(element) {
+  element.addEventListener('click', function () {
+    all('.menu-item-deploy > .icon-up').forEach(function (el) {
+      if (el.parentNode === element) {
+        el.classList.toggle('icon-hide');
+      }
+    });
+    all('.menu-item-deploy > .icon-down').forEach(function (el) {
+      if (el.parentNode === element) {
+        el.classList.toggle('icon-hide');
+      }
+    });
+  });
+};
+
+var openSubmenu = function openSubmenu(element) {
+  element.addEventListener('click', function () {
+    all('.menu-item-deploy ~ .submenu').forEach(function (el) {
+      if (el.parentNode === element.parentNode) {
+        el.classList.toggle('open-submenu');
+      }
+    });
+  });
+}; //desplegar los submenu
+
+
+var menuItemDeploy = all('.menu-item-deploy');
+menuItemDeploy.forEach(function (element) {
+  return openSubmenu(element);
+}); //mostrar y quitar las flechas arriba y abajo
+
+menuItemDeploy.forEach(function (element) {
+  return showHideArrow(element);
+}); //abrir menu
+
+id('openMenu').addEventListener('click', openCloseMenu); //cerrar menu haciendo click fuera del menu
+
+id('menu').addEventListener('click', closeMenu);
 
 /***/ }),
 

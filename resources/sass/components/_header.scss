@@ -1,0 +1,42 @@
+.container-header{
+    background: red;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 3rem;
+    background: $color-header;
+    a{
+        color: hsl(0, 0%, 95%);
+    }
+}
+.header{
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    margin: 0 1rem;
+    .logo{
+        display: flex;
+    }
+}
+.login-toggle-search{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: auto;
+    align-items: center;
+    .login, .toggle, .search{
+        display: flex;
+    }
+    .login, .search{
+        margin-right: .5rem;
+    }
+    .toggle{
+        cursor: pointer;
+        @include mq(1024px){
+            display: none;
+        }
+    }
+
+}

@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+$color-header: hsl(210, 50%, 50%);
+$color-menu: hsla(0, 0%, 20%, .5);
+$color-danger: hsl(0, 50%, 50%);
+$color-warning: hsl(50, 50%, 50%);
+$height-header: 3rem;
+$width-menu: 25vw;
+body{
+    font-family: 'Nunito', sans-serif;
+    font-size: 1rem;
+    color: hsl(0, 0%, 20%);
+    background: hsl(0, 0%, 95%);
+    margin-top: $height-header;
+    &::-webkit-scrollbar{
+        width: .5rem;
+    }
+    &::-webkit-scrollbar-thumb{
+        background: hsl(0, 0%, 80%);
+        border-radius: .25rem;
+        &:hover{
+            background: hsl(0, 0%, 70%);
+        }
+    }
+    &::-webkit-scrollbar-track{
+        background: hsl(0, 0%, 100%);
+    }
+    @include mq(1024px){
+        margin-left: $width-menu;
+    }
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
