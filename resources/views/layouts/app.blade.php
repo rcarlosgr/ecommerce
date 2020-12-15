@@ -13,7 +13,7 @@
     <div class="container-header">
         <header class="header">
             <div class="logo">
-                <a href="">Ferreteria</a>
+                <a href="">Ferreteria Malvinas</a>
             </div>
             <div class="login-toggle-search">
                 <div class="search">
