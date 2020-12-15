@@ -108,6 +108,8 @@ var closeMenu = function closeMenu(e) {
   }
 };
 
+var openLogin = function openLogin() {};
+
 var showHideArrow = function showHideArrow(element) {
   element.addEventListener('click', function () {
     all('.menu-item-deploy > .icon-up').forEach(function (el) {
@@ -145,7 +147,9 @@ menuItemDeploy.forEach(function (element) {
 
 id('openMenu').addEventListener('click', openCloseMenu); //cerrar menu haciendo click fuera del menu
 
-id('menu').addEventListener('click', closeMenu);
+id('menu').addEventListener('click', closeMenu); //abrir modal login
+
+id('openLogin').addEventListener('click', openLogin);
 
 /***/ }),
 

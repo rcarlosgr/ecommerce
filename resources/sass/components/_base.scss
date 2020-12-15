@@ -4,16 +4,18 @@
 }
 $color-header: hsl(210, 50%, 50%);
 $color-menu: hsla(0, 0%, 20%, .5);
+$color-primary: hsl(210, 50%, 50%);
 $color-danger: hsl(0, 50%, 50%);
 $color-warning: hsl(50, 50%, 50%);
 $height-header: 3rem;
-$width-menu: 25vw;
+$width-menu: 25%;
 body{
     font-family: 'Nunito', sans-serif;
     font-size: 1rem;
     color: hsl(0, 0%, 20%);
     background: hsl(0, 0%, 95%);
     margin-top: $height-header;
+
     &::-webkit-scrollbar{
         width: .5rem;
     }
@@ -29,6 +31,7 @@ body{
     }
     @include mq(1024px){
         margin-left: $width-menu;
+        width: 100% - $width-menu;
     }
 }
 a{
@@ -36,4 +39,38 @@ a{
 }
 li{
     list-style: none;
+}
+.btn{
+    padding: .5rem .75rem;
+    color: hsl(0, 0%, 95%);
+    border: none;
+    outline: none;
+    border-radius: .25rem;
+    width: 100%;
+}
+.btn-primary{
+    background: $color-primary;
+}
+input{
+    border: none;
+    outline: none;
+    padding: .5rem;
+    border-radius: .25rem;
+}
+.form{
+    margin-bottom: 1rem;
+}
+.form-item{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: .5rem;
+}
+.message-error{
+    background: hsl(0, 50%, 90%);
+    color:  hsl(0, 50%, 40%);
+    padding: .5rem;
+    border-radius: .25rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    display: none;
 }

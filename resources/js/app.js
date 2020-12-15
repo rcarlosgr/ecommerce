@@ -11,6 +11,9 @@ const closeMenu = (e) => {
         openCloseMenu()
     }
 }
+const openLogin = () => {
+
+}
 const showHideArrow = (element) => {
     element.addEventListener('click', () => {
         all('.menu-item-deploy > .icon-up').forEach(el => {
@@ -45,3 +48,5 @@ menuItemDeploy.forEach(element => showHideArrow(element))
 id('openMenu').addEventListener('click', openCloseMenu)
 //cerrar menu haciendo click fuera del menu
 id('menu').addEventListener('click', closeMenu)
+//abrir modal login
+id('openLogin').addEventListener('click', openLogin)

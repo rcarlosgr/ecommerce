@@ -1,10 +1,9 @@
 .container-header{
-    background: red;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 3rem;
+    width: 100%;
+    height: $height-header;
     background: $color-header;
     a{
         color: hsl(0, 0%, 95%);

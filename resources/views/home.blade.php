@@ -3,6 +3,7 @@
 
 @section('content')
     <h2>Hola, muy pronto esto sera un sistema de comercio electronico.</h2>
+    <a href="{{ secure_url('ingresar') }}">Iniciar sesion</a>
     <p>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo quasi doloribus odio magni, itaque, nulla eligendi ea repellendus exercitationem nobis a quo in facilis natus molestiae? Aliquam earum nulla unde.
         Facere officiis sed totam cupiditate suscipit illo eligendi sapiente esse, ut laborum aliquam, quos dolor saepe animi qui quasi incidunt beatae autem eum doloremque. Mollitia officiis reiciendis consequuntur aperiam minus!
