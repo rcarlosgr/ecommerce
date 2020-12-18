@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -74,13 +75,8 @@ input {
 }
 
 .message-error {
-  background: #f2d9d9;
   color: #993333;
-  padding: 0.5rem;
-  border-radius: 0.25rem;
-  margin-bottom: 1rem;
-  text-align: center;
-  display: none;
+  font-size: 0.9rem;
 }
 
 .container-header {
@@ -94,6 +90,41 @@ input {
 
 .container-header a {
   color: #f2f2f2;
+}
+
+.header-search {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 3rem;
+  background: white;
+  display: flex;
+  padding: 0 1rem;
+}
+
+.header-search .icon-close-search {
+  display: flex;
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+.header-search .icon-close-search svg {
+  width: 1rem;
+  height: 1rem;
+  margin: auto;
+}
+
+.header-search input {
+  width: 100%;
+  border: 1px solid #e6e6e6;
+  background: transparent;
+  margin: auto;
+}
+
+.open-search {
+  right: 0;
+  transition: right 0.2s;
 }
 
 .header {
@@ -118,13 +149,21 @@ input {
 
 .login-toggle-search .login,
 .login-toggle-search .toggle,
-.login-toggle-search .search {
+.login-toggle-search .icon-search {
   display: flex;
 }
 
+.login-toggle-search .icon-search {
+  cursor: pointer;
+}
+
 .login-toggle-search .login,
-.login-toggle-search .search {
+.login-toggle-search .icon-search {
   margin-right: 0.5rem;
+}
+
+.login-toggle-search .login {
+  cursor: pointer;
 }
 
 .login-toggle-search .toggle {
@@ -295,29 +334,62 @@ input {
 .content-login .recuperation-title,
 .content-recuperation .register-title,
 .content-recuperation .login-title,
-.content-recuperation .recuperation-title {
+.content-recuperation .recuperation-title,
+.content-modal-login .register-title,
+.content-modal-login .login-title,
+.content-modal-login .recuperation-title {
   font-size: 1.2rem;
   text-align: center;
 }
 
 .content-register a,
 .content-login a,
-.content-recuperation a {
+.content-recuperation a,
+.content-modal-login a {
   color: #4080bf;
 }
 
 .content-register li,
 .content-login li,
-.content-recuperation li {
+.content-recuperation li,
+.content-modal-login li {
   text-align: center;
 }
 
 @media screen and (min-width: 1024px) {
   .content-register,
   .content-login,
-  .content-recuperation {
+  .content-recuperation,
+  .content-modal-login {
     width: 50%;
     margin: 0 auto;
+  }
+}
+
+.container-modal-login {
+  background: rgba(51, 51, 51, 0.5);
+  position: fixed;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 3rem);
+  padding: 1rem;
+}
+
+.open-modal-login {
+  top: 3rem;
+  transition: top 0.2s;
+}
+
+.content-modal-login {
+  background: #f2f2f2;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .content-modal-login {
+    width: 40%;
   }
 }
 

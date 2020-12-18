@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CustomerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,9 +23,12 @@ Route::get('/', function () {
 Route::get('ingresar', function () {
     return view('auth/login');
 });
-Route::get('registro', function () {
-    return view('auth/register');
-});
 Route::get('recuperacion', function () {
     return view('auth/recuperation');
 });
+// Route::get('registro-admin', function () {
+//     return view('auth/register_user');
+// });
+Route::get('/registro', [CustomerController::class, 'create']);
+Route::post('/customer/store', [CustomerController::class, 'store']);
+

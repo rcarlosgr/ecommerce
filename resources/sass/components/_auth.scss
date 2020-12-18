@@ -9,7 +9,8 @@
 }
 .content-register,
 .content-login,
-.content-recuperation{
+.content-recuperation,
+.content-modal-login{
     .register-title,
     .login-title,
     .recuperation-title{
@@ -25,5 +26,26 @@
     @include mq(1024px){
         width: 50%;
         margin: 0 auto;
+    }
+}
+.container-modal-login{
+    background: $color-modal;
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: $height-modal-login;
+    padding: 1rem;
+}
+.open-modal-login{
+    top: $height-header;
+    transition: top .2s;
+}
+.content-modal-login{
+    background: hsl(0, 0%, 95%);
+    padding: .5rem;
+    border-radius: .25rem;
+    @include mq(1024px){
+        width: 40%;
     }
 }

@@ -2,7 +2,7 @@
 @section('title', 'Ingresar')
 @section('content')
     <div class="container-login">
-        <div class="content-login">
+        <div class="content-login" id="contentLogin">
             <h2  class="login-title">Iniciar sesion</h2>
             <form action="" class="form">
                 <div class="form-item">

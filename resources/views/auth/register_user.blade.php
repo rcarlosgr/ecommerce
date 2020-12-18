@@ -3,7 +3,7 @@
 @section('content')
     <div class="container-register">
         <div class="content-register">
-            <h2  class="register-title">Registro</h2>
+            <h2  class="register-title">Registro de Usuarios</h2>
             <form action="" class="form">
                 <div class="form-item">
                     <label for="">Nombres:</label>
@@ -30,7 +30,7 @@
                     <input type="password" name="" id="" placeholder="Repetir contraseña">
                 </div>
                 <div class="form-btns">
-                    <button class="btn btn-primary">Ingresar</button>
+                    <button class="btn btn-primary">Registrarse</button>
                 </div>
             </form>
             <div class="message-error">Usuario o contraseña incorrectos</div>
