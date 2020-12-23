@@ -43,6 +43,9 @@ a{
 li{
     list-style: none;
 }
+button:disabled{
+    color: red;
+}
 .btn{
     padding: .5rem .75rem;
     color: hsl(0, 0%, 95%);
@@ -76,4 +79,20 @@ input{
     // margin-bottom: 1rem;
     font-size: .9rem;
     // text-align: center;
+}
+.container-alert{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+.alert-error{
+    background: hsl(0, 50%, 90%);
+    color:  hsl(0, 50%, 40%);
+    padding: .5rem 1rem;
+    border-radius: .25rem;
+    font-size: .9rem;
+    text-align: center;
+}
+.input-error{
+    border: 1px solid hsl(0, 50%, 80%);
 }

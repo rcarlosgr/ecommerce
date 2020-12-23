@@ -8,43 +8,33 @@
                 @csrf
                 <div class="form-item">
                     <label for="">Nombres:</label>
-                    <input type="text" name="name" id="" placeholder="Nombres" value="{{ old('name') }}">
-                    @error('name')
-                        <div class="message-error">{{ $message }}</div>
-                    @enderror
+                    <input type="text" name="name" id="name" placeholder="Nombres" required>
+                    <div id="messageName"></div>
                 </div>
                 <div class="form-item">
                     <label for="">Apellidos:</label>
-                    <input type="text" name="lastname" id="" placeholder="Apellidos" value="{{ old('lastname') }}">
-                    @error('lastname')
-                        <div class="message-error">{{ $message }}</div>
-                    @enderror
+                    <input type="text" name="lastname" id="lastname" placeholder="Apellidos">
+                    <div id="messageLastname"></div>
                 </div>
                 <div class="form-item">
                     <label for="">Dni:</label>
-                    <input type="text" name="dni" id="" placeholder="Dni" value="{{ old('dni') }}">
-                    @error('dni')
-                        <div class="message-error">{{ $message }}</div>
-                    @enderror
+                    <input type="text" name="dni" id="dni" placeholder="Dni">
+                    <div id="messageDni"></div>
                 </div>
                 <div class="form-item">
                     <label for="">Contraseña:</label>
-                    <input type="password" name="password" id="" placeholder="Contraseña">
-                    @error('password')
-                        <div class="message-error">{{ $message }}</div>
-                    @enderror
+                    <input type="password" name="password" id="password" placeholder="Contraseña">
+                    <div id="messagePassword"></div>
                 </div>
                 <div class="form-item">
                     <label for="">Repetir contraseña:</label>
-                    <input type="password" name="password_confirmation" id="" placeholder="Repetir contraseña">
-                    @error('repearPassword')
-                        <div class="message-error">{{ $message }}</div>
-                    @enderror
+                    <input type="password" name="passwordConfirmation" id="passwordConfirmation" placeholder="Repetir contraseña">
                 </div>
                 <div class="form-btns">
                     <button type="submit" class="btn btn-primary" id="btnRegister">Registrarse</button>
                 </div>
             </form>
+            <div id="messageForm"></div>
             <li>¿ Ya tienes cuenta ? <a href="{{ secure_url('ingresar') }}">Iniciar sesion</a></li>
         </div>
     </div>

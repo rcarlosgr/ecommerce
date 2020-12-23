@@ -44,6 +44,10 @@ li {
   list-style: none;
 }
 
+button:disabled {
+  color: red;
+}
+
 .btn {
   padding: 0.5rem 0.75rem;
   color: #f2f2f2;
@@ -77,6 +81,25 @@ input {
 .message-error {
   color: #993333;
   font-size: 0.9rem;
+}
+
+.container-alert {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.alert-error {
+  background: #f2d9d9;
+  color: #993333;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.input-error {
+  border: 1px solid #e6b3b3;
 }
 
 .container-header {
@@ -228,7 +251,8 @@ input {
   color: #f2f2f2;
 }
 
-.menu-header .user-name {
+.menu-header .user-name,
+.menu-header .user-dni {
   font-weight: bold;
 }
 

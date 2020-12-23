@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::get('/', function () {
+Route::get('/', function() {
     return view('home');
 });
 Route::get('ingresar', function () {
@@ -31,4 +32,6 @@ Route::get('recuperacion', function () {
 // });
 Route::get('/registro', [CustomerController::class, 'create']);
 Route::post('/customer/store', [CustomerController::class, 'store']);
+Route::post('/customer/validate-login', [CustomerController::class, 'validateLogin']);
+Route::get('/customer/cerrar-sesion', [CustomerController::class, 'logout']);
 

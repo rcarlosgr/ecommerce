@@ -35,16 +35,46 @@ class CustomerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CustomerRequest $request)
+    public function store(Request $request)
     {
         $customer = new Customer;
-        $validated = $request->validated();
-        $customer->name = strtolower($validated['name']);
-        $customer->lastname = strtolower($validated['lastname']);
-        $customer->dni = $validated['dni'];
-        $customer->password = Hash::make($validated['password']);
-        $response = $customer->save();
-        return redirect('/registro');
+        // $validated = $request->validated();
+        $name = trim($request->name);
+        $lastname = trim($request->lastname);
+        $dni = trim($request->dni);
+        $password = trim($request->password);
+        if (!(
+            preg_match('#^[a-zA-Z ]{1,50}$#', $name) === 1
+            && preg_match('#^[a-zA-Z ]{1,50}$#', $lastname) === 1
+            && preg_match('#^[0-9]{8}$#', $dni) === 1
+            && preg_match('#^[a-zA-Z0-9]{6,20}$#', $password) === 1
+        )) {
+            return [
+                'type' => 'error',
+                'message' => 'Complete todos los campos de manera correcta'
+            ];
+        }
+        if ($this->existsDni($dni)) {
+            return [
+                'type' => 'error',
+                'message' => 'El dni ya esta registrado'
+            ];
+        }
+        if (strcmp($password, $request->passwordConfirmation) !== 0) {
+            return [
+                'type' => 'error',
+                'message' => 'Las contraseñas no coiciden'
+            ];
+        }
+        $customer->name = $name;
+        $customer->lastname = $lastname;
+        $customer->dni = $dni;
+        $customer->password = $password;
+        $customer->save();
+        return [
+            'type' => 'success',
+            'message' => 'Gracias por registrarte.'
+        ];
     }
 
     /**
@@ -90,5 +120,30 @@ class CustomerController extends Controller
     public function destroy(Customer $customer)
     {
         //
+    }
+    public function validateLogin(Request $request)
+    {
+        $customer = Customer::where('dni', $request->dni)->first();
+        if ($customer) {
+            if (Hash::check($request->password, $customer->password)){
+                session([
+                    'dni' => $customer->dni,
+                    'name' => $customer->name,
+                    'lastname' => $customer->lastname
+                ]);
+                return 'true';
+            }
+        }
+        return 'false';
+    }
+    public function logout()
+    {
+        session()->flush();
+        return redirect('/');
+    }
+    public function existsDni($dni)
+    {
+        if (Customer::where('dni', $dni)->first()) return true;
+        return false;
     }
 }
