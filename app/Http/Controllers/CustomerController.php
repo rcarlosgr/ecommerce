@@ -123,6 +123,7 @@ class CustomerController extends Controller
     }
     public function validateLogin(Request $request)
     {
+        // return $request;
         $customer = Customer::where('dni', $request->dni)->first();
         if ($customer) {
             if (Hash::check($request->password, $customer->password)){

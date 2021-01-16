@@ -17422,18 +17422,40 @@ var validateCustomer = function validateCustomer(e) {
 
 var validateLoginCustomer = function validateLoginCustomer(e) {
   e.preventDefault();
-  data = new FormData(id('formLogin'));
+  data = new FormData(e.target.form);
   fetch('/customer/validate-login', {
     method: 'POST',
     body: data
   }).then(function (res) {
     return res.text();
   }).then(function (res) {
+    console.log(res);
+
     if (res === 'true') {
       window.location = '/';
     } else if (res === 'false') {
       id('messageLogin').innerHTML = 'Usuario o contraseña incorrectos';
       id('messageLogin').classList.add('alert-error');
+    }
+  });
+};
+
+var validateLoginCustomerModal = function validateLoginCustomerModal(e) {
+  e.preventDefault();
+  data = new FormData(e.target.form);
+  fetch('/customer/validate-login', {
+    method: 'POST',
+    body: data
+  }).then(function (res) {
+    return res.text();
+  }).then(function (res) {
+    console.log(res);
+
+    if (res === 'true') {
+      window.location = '/';
+    } else if (res === 'false') {
+      id('messageLoginModal').innerHTML = 'Usuario o contraseña incorrectos';
+      id('messageLoginModal').classList.add('alert-error');
     }
   });
 }; //desplegar los submenu
@@ -17461,26 +17483,43 @@ if (id('openLogin')) {
 id('modalLogin').addEventListener('click', closeLogin);
 id('openSearch').addEventListener('click', openSearch); //cerrar buscardor en el header
 
-id('closeSearch').addEventListener('click', closeSearch); //validar cliente al registrar
+id('closeSearch').addEventListener('click', closeSearch); //iniciar sesion
 
-var url = window.location.pathname;
+if (id('btnLogin')) {
+  id('btnLogin').addEventListener('click', validateLoginCustomer);
+}
 
-if (url === '/registro') {
+if (id('btnLoginModal')) {
+  id('btnLoginModal').addEventListener('click', validateLoginCustomerModal);
+} //validar cliente al registrar
+
+
+if (id('name')) {
   id('name').addEventListener('blur', function () {
     validate(/^[a-zA-Z ]{1,50}$/, 'name', 'messageName', 'Nombre incorrecto');
   });
+}
+
+if (id('lastname')) {
   id('lastname').addEventListener('blur', function () {
     validate(/^[a-zA-Z ]{1,50}$/, 'lastname', 'messageLastname', 'Apellido incorrecto');
   });
+}
+
+if (id('dni')) {
   id('dni').addEventListener('blur', function () {
-    validate(/^[0-9]{8}$/, 'dni', 'messageDni', 'Dni incorrecto');
+    validate(/^[0-9]{8}$/, 'dni', 'messageDni', 'El Dni debe tener 8 digitos');
   });
+}
+
+if (id('password')) {
   id('password').addEventListener('blur', function () {
     validate(/^[a-zA-Z0-9]{6,20}$/, 'password', 'messagePassword', 'La contraseña debe tener mayusculas, minusculas o numeros (6 y 20 caracteres)');
   });
+}
+
+if (id('btnRegister')) {
   id('btnRegister').addEventListener('click', validateCustomer);
-} else if (url === '/ingresar') {
-  id('btnRegister').addEventListener('click', validateLoginCustomer);
 }
 
 /***/ }),

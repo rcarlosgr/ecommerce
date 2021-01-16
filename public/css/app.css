@@ -102,6 +102,19 @@ input {
   border: 1px solid #e6b3b3;
 }
 
+.card {
+  width: 20%;
+  border: 1px solid #e6e6e6;
+}
+
+.card-header img {
+  width: 100%;
+}
+
+.money::before {
+  content: "S/ ";
+}
+
 .container-header {
   position: fixed;
   top: 0;

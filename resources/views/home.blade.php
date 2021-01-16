@@ -11,6 +11,12 @@
         Estamos trabajando en ello...</p>
 
     <a href="{{ secure_url('ingresar') }}">Iniciar sesion</a>
+    <x-card
+        routeImage="images/products/51002.webp"
+        name="Silla giratoria Nueva Ginebra Negra"
+        marca="OEM"
+        price="349"
+    />
 
 @endsection
 
