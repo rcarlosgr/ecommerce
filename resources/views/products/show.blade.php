@@ -8,9 +8,11 @@
                     <img src="{{ secure_asset('images/products/'.$product->image) }}" alt="imagen producto">
                 </div>
                 <div class="info">
-                    <li>{{ $product->name }}</li>
-                    <li>{{ $product->brand }}</li>
-                    <li>{{ $product->price }}</li>
+                    <div class="info-product">
+                        <li>{{ $product->name }}</li>
+                        <li>{{ $product->brand }}</li>
+                        <li>{{ $product->price }}</li>
+                    </div>
                     <div class="add-car">
                         <div class="amount">
                             <button class="btn btn-primary" id="btnRemoveAmount">-</button>
