@@ -126,6 +126,17 @@ const validateLoginCustomerModal = (e) => {
         }
     })
 }
+//agregar cantidad
+const addAmount = () => {
+    let v = id('inputAmount').value
+    id('inputAmount').value = parseInt(v) + 1
+}
+const removeAmount = () => {
+    let v = id('inputAmount').value
+    id('inputAmount').value = parseInt(v) - 1
+}
+
+
 //desplegar los submenu
 let menuItemDeploy = all('.menu-item-deploy')
 menuItemDeploy.forEach(element => openSubmenu(element))
@@ -177,3 +188,13 @@ if (id('password')) {
 if (id('btnRegister')) {
     id('btnRegister').addEventListener('click', validateCustomer)
 }
+
+
+//agregar cantidad
+if (id('btnAddAmount')) {
+    id('btnAddAmount').addEventListener('click', addAmount)
+}
+if (id('btnRemoveAmount')) {
+    id('btnRemoveAmount').addEventListener('click', removeAmount)
+}
+

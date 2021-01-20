@@ -17458,6 +17458,17 @@ var validateLoginCustomerModal = function validateLoginCustomerModal(e) {
       id('messageLoginModal').classList.add('alert-error');
     }
   });
+}; //agregar cantidad
+
+
+var addAmount = function addAmount() {
+  var v = id('inputAmount').value;
+  id('inputAmount').value = parseInt(v) + 1;
+};
+
+var removeAmount = function removeAmount() {
+  var v = id('inputAmount').value;
+  id('inputAmount').value = parseInt(v) - 1;
 }; //desplegar los submenu
 
 
@@ -17520,6 +17531,15 @@ if (id('password')) {
 
 if (id('btnRegister')) {
   id('btnRegister').addEventListener('click', validateCustomer);
+} //agregar cantidad
+
+
+if (id('btnAddAmount')) {
+  id('btnAddAmount').addEventListener('click', addAmount);
+}
+
+if (id('btnRemoveAmount')) {
+  id('btnRemoveAmount').addEventListener('click', removeAmount);
 }
 
 /***/ }),

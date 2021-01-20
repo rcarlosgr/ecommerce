@@ -55,10 +55,30 @@ button:disabled {
   outline: none;
   border-radius: 0.25rem;
   width: 100%;
+  cursor: pointer;
 }
 
 .btn-primary {
   background: #4080bf;
+}
+
+.btn-success {
+  background: #267326;
+}
+
+.btn-add-car {
+  padding: 0.5rem 0.75rem;
+  color: #267326;
+  border: 1px solid #267326;
+  outline: none;
+  border-radius: 0.25rem;
+  width: 100%;
+}
+
+.btn-add-car:hover {
+  cursor: pointer;
+  background: #267326;
+  color: #f2f2f2;
 }
 
 input {
@@ -102,13 +122,33 @@ input {
   border: 1px solid #e6b3b3;
 }
 
+.container-main {
+  padding: 1rem;
+}
+
+.container-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.25rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .container-card {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
 .card {
-  width: 20%;
   border: 1px solid #e6e6e6;
 }
 
 .card-header img {
   width: 100%;
+}
+
+.card-body,
+.card-footer {
+  padding: 0.25rem;
 }
 
 .money::before {
@@ -183,16 +223,19 @@ input {
   align-items: center;
 }
 
+.login-toggle-search .icon-car,
 .login-toggle-search .login,
 .login-toggle-search .toggle,
 .login-toggle-search .icon-search {
   display: flex;
 }
 
+.login-toggle-search .icon-car,
 .login-toggle-search .icon-search {
   cursor: pointer;
 }
 
+.login-toggle-search .icon-car,
 .login-toggle-search .login,
 .login-toggle-search .icon-search {
   margin-right: 0.5rem;
@@ -428,5 +471,56 @@ input {
   .content-modal-login {
     width: 40%;
   }
+}
+
+.product-header {
+  border: 1px solid red;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.product-header .img img {
+  width: 100%;
+}
+
+.add-car {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.add-car .amount {
+  display: flex;
+  margin-right: 1rem;
+}
+
+.add-car input {
+  width: 3rem;
+  margin: 0 0.5rem;
+  text-align: center;
+}
+
+.delivery-options {
+  background: white;
+}
+
+.delivery-options h3 {
+  padding: 1rem;
+}
+
+.delivery-options .delivery-option {
+  border-top: 1px solid #e6e6e6;
+  display: flex;
+  padding: 1rem 0;
+  margin: 0 1rem;
+}
+
+.delivery-option-header {
+  margin-right: 1rem;
+}
+
+.delivery-option-body .delivery-option-status {
+  color: #267326;
+  font-weight: bold;
 }
 

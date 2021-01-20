@@ -2,24 +2,29 @@
 
 namespace App\View\Components;
 
+use App\Models\Product;
 use Illuminate\View\Component;
 
 class Card extends Component
 {
-    public $routeImage;
+    public $id;
     public $name;
-    public $marca;
+    public $brand;
+    public $description;
+    public $image;
     public $price;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($name, $routeImage, $marca, $price)
+    public function __construct($id, $name, $brand, $description, $image, $price)
     {
+        $this->id = $id;
         $this->name = $name;
-        $this->routeImage = $routeImage;
-        $this->marca = $marca;
+        $this->brand = $brand;
+        $this->description = $description;
+        $this->image = $image;
         $this->price = $price;
 
     }

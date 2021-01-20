@@ -11,12 +11,20 @@
         Estamos trabajando en ello...</p>
 
     <a href="{{ secure_url('ingresar') }}">Iniciar sesion</a>
-    <x-card
-        routeImage="images/products/51002.webp"
-        name="Silla giratoria Nueva Ginebra Negra"
-        marca="OEM"
-        price="349"
-    />
+
+    <div class="container-card">
+        @foreach ($products as $product)
+            <x-card
+            id="{{ $product->id }}"
+            name="{{ $product->name }}"
+            brand="{{ $product->brand }}"
+            description="{{ $product->description }}"
+            image="{{ $product->image }}"
+            price="{{ $product->price }}"
+            />
+        @endforeach
+
+    </div>
 
 @endsection
 

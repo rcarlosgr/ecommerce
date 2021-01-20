@@ -56,13 +56,13 @@
     flex-wrap: wrap;
     margin-left: auto;
     align-items: center;
-    .login, .toggle, .icon-search{
+    .icon-car, .login, .toggle, .icon-search{
         display: flex;
     }
-    .icon-search{
+    .icon-car, .icon-search{
         cursor: pointer;
     }
-    .login, .icon-search{
+    .icon-car, .login, .icon-search{
         margin-right: .5rem;
     }
     .login{
