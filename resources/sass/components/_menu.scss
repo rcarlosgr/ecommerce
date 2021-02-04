@@ -23,11 +23,22 @@
     width: 80%;
     height: 100%;
     display: grid;
+    grid-template-rows: 1fr max-content;
+    @include mq(1024px){
+        width:100%;
+    }
+}
+.content-menu-logged{
+    background: hsl(0, 0%, 100%);
+    width: 80%;
+    height: 100%;
+    display: grid;
     grid-template-rows: max-content 1fr max-content;
     @include mq(1024px){
         width:100%;
     }
 }
+
 .container-menu a{
     color: hsl(0, 0%, 20%);
 }

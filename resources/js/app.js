@@ -198,3 +198,8 @@ if (id('btnRemoveAmount')) {
     id('btnRemoveAmount').addEventListener('click', removeAmount)
 }
 
+
+
+q('.btn').addEventListener('click', () => {
+    id('loader').classList.toggle('loader')
+})

@@ -11,6 +11,7 @@
     </div>
     <div class="form-btns">
         <button type="submit" class="btn btn-primary" id="{{ $idBtn }}">Ingresar</button>
+        <div class="loader" id="loader">... cargando</div>
     </div>
 </form>
 <div class="container-alert">

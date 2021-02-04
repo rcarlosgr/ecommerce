@@ -69,7 +69,7 @@ class CustomerController extends Controller
         $customer->name = $name;
         $customer->lastname = $lastname;
         $customer->dni = $dni;
-        $customer->password = $password;
+        $customer->password = Hash::make($password);
         $customer->save();
         return [
             'type' => 'success',

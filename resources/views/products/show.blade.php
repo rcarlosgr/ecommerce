@@ -8,11 +8,9 @@
                     <img src="{{ secure_asset('images/products/'.$product->image) }}" alt="imagen producto">
                 </div>
                 <div class="info">
-                    <div class="info-product">
-                        <li>{{ $product->name }}</li>
-                        <li>{{ $product->brand }}</li>
-                        <li>{{ $product->price }}</li>
-                    </div>
+                    <h2>{{ $product->name }}</h2>
+                    <li>{{ $product->brand }}</li>
+                    <h3 class="money">{{ $product->price }}</h3>
                     <div class="add-car">
                         <div class="amount">
                             <button class="btn btn-primary" id="btnRemoveAmount">-</button>
@@ -20,6 +18,16 @@
                             <button class="btn btn-primary" id="btnAddAmount">+</button>
                         </div>
                         <button class="btn-add-car">Agregar al carro</button>
+                    </div>
+                    <div class="service-items">
+                        <div class="service-item">
+                            <input type="radio" name="service" id="withService" checked>
+                            <label for="withService">Servicio armado <span class="money">30</span></label>
+                        </div>
+                        <div class="service-item">
+                            <input type="radio" name="service" id="noService">
+                            <label for="noService">No, gracias</label>
+                        </div>
                     </div>
                     <div class="delivery-options">
                         <h3>Opciones de entrega</h3>

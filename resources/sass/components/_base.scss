@@ -131,7 +131,12 @@ input{
 }
 .card{
     // width: 50%;
+    border-radius: .5rem;
     border: 1px solid hsl(0, 0%, 90%);
+    overflow: hidden;
+    &:hover{
+        box-shadow: 0 0 7px  hsl(0, 0%, 80%);
+    }
 
 }
 .card-header img{
@@ -146,3 +151,8 @@ input{
     }
 }
 
+
+
+.loader{
+    display: none;
+}

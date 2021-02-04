@@ -17542,6 +17542,10 @@ if (id('btnRemoveAmount')) {
   id('btnRemoveAmount').addEventListener('click', removeAmount);
 }
 
+q('.btn').addEventListener('click', function () {
+  id('loader').classList.toggle('loader');
+});
+
 /***/ }),
 
 /***/ "./resources/sass/app.scss":

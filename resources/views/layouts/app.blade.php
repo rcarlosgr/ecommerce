@@ -61,13 +61,19 @@
         </div>
     </div>
     <div class="container-menu" id="menu">
-        <div class="content-menu" id="contentMenu">
+        <div
+        @if (session('dni'))
+            class="content-menu-logged"
+        @else
+            class="content-menu"
+        @endif
+        id="contentMenu">
             @if (session('dni'))
-            <div class="menu-header">
-                <img class="user-avatar" src="https://img.icons8.com/offices/80/000000/select-user.png"/>
-                <p class="user-name">{{ ucwords(session('name')) }} {{ ucwords(session('lastname')) }}</p>
-                <p class="user-dni">{{ session('dni') }}</p>
-            </div>
+                <div class="menu-header">
+                    <img class="user-avatar" src="https://img.icons8.com/offices/80/000000/select-user.png"/>
+                    <p class="user-name">{{ ucwords(session('name')) }} {{ ucwords(session('lastname')) }}</p>
+                    <p class="user-dni">{{ session('dni') }}</p>
+                </div>
             @endif
             <div class="menu-body">
                 <nav class="content-menu-body">
@@ -219,7 +225,12 @@
 
             <div class="menu-footer">
                 <li><a href="">¿ Quienes somos ?</a></li>
-                <li><a href="{{ secure_url('customer/cerrar-sesion') }}"> Cerrar sesion </a></li>
+                @if (session('dni'))
+                    <li><a href="{{ secure_url('customer/cerrar-sesion') }}"> Cerrar sesion </a></li>
+                @else
+                    <li><a href="{{ secure_url('ingresar') }}"> Iniciar sesion </a></li>
+                @endif
+
             </div>
         </div>
     </div>

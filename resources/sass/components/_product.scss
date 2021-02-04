@@ -35,6 +35,13 @@
         text-align: center;
     }
 }
+.service-items{
+    display: flex;
+    flex-direction: row;
+    .service-item{
+        margin-right: 1rem;
+    }
+}
 .delivery-options{
     background: hsl(0, 0%, 100%);
     h3{

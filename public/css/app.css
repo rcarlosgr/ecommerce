@@ -139,7 +139,13 @@ input {
 }
 
 .card {
+  border-radius: 0.5rem;
   border: 1px solid #e6e6e6;
+  overflow: hidden;
+}
+
+.card:hover {
+  box-shadow: 0 0 7px #cccccc;
 }
 
 .card-header img {
@@ -153,6 +159,10 @@ input {
 
 .money::before {
   content: "S/ ";
+}
+
+.loader {
+  display: none;
 }
 
 .container-header {
@@ -284,12 +294,27 @@ input {
   width: 80%;
   height: 100%;
   display: grid;
+  grid-template-rows: 1fr -webkit-max-content;
+  grid-template-rows: 1fr max-content;
+}
+
+@media screen and (min-width: 1024px) {
+  .content-menu {
+    width: 100%;
+  }
+}
+
+.content-menu-logged {
+  background: white;
+  width: 80%;
+  height: 100%;
+  display: grid;
   grid-template-rows: -webkit-max-content 1fr -webkit-max-content;
   grid-template-rows: max-content 1fr max-content;
 }
 
 @media screen and (min-width: 1024px) {
-  .content-menu {
+  .content-menu-logged {
     width: 100%;
   }
 }
@@ -515,6 +540,15 @@ input {
   width: 3rem;
   margin: 0 0.5rem;
   text-align: center;
+}
+
+.service-items {
+  display: flex;
+  flex-direction: row;
+}
+
+.service-items .service-item {
+  margin-right: 1rem;
 }
 
 .delivery-options {
